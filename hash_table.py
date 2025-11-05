@@ -14,15 +14,15 @@ class HashTable():
         value = 0
         for letter in key:
             value += ord(letter)
-        return value % 17
+        return value
 
 
     def put(self, key, value):
         """ Puts a value in the linked list of the specified bucket. """
-        bucket = self.hash(key)
+        bucket = self.hash(key) % len(self.buckets)
         self.buckets[bucket].add(key, value)
 
     def get(self, key):
         """ Gets the requested value in the linked list of a specified bucket. """
-        bucket = self.hash(key)
-        self.buckets[bucket].find(key)
+        bucket = self.hash(key) % len(self.buckets)
+        return self.buckets[bucket].find(key)
