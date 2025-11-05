@@ -12,9 +12,11 @@ class HashTable():
     def hash(self, key):
         """ Adds the calculation of the letters in a string. """
         value = 0
-        powers = 31
+        factor = 31
+        power = 0
         for letter in key:
-            value += (ord(letter) * powers)
+            value += (ord(letter) * factor**power)
+            power += 1
         return value
 
 
