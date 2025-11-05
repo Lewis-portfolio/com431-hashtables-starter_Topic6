@@ -6,7 +6,7 @@ from linkedlist import TuplesLinkedList
 class HashTable():
     """ A hash table. """
     def __init__(self):
-        self.buckets = [TuplesLinkedList() for i in range(17)]
+        self.buckets = [TuplesLinkedList() for i in range(31)]
 
 
     def hash(self, key):
